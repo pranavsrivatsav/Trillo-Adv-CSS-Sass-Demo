@@ -71,6 +71,7 @@
 //USER NAVIGATION
 .user-nav {
     align-self: stretch;
+    position: relative;
 
     display: flex;
     align-items: center;
@@ -116,6 +117,58 @@
         height: 3.75rem;
         border-radius: 50%;
         margin-right: 1rem;
+    }
+
+    &__user-menu {
+        width: 12.3rem;
+        position: absolute;
+        top: 100%;
+        right: -0.1%;
+        font-size: 1.5rem;
+        color: var(--color-primary);
+        display: none;
+        background-color: #fff;
+        transform: scaleY(0);
+        border: var(--line);
+        text-align: center;
+        transition: all 0.3s;
+        transform-origin: top;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__user-option:link,
+    &__user-option:visited {
+        padding: 1rem 0rem;
+        width: 100%;
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:not(:last-child) {
+            border-bottom: var(--line);
+        }
+    }
+
+    &__user-option:hover {
+        background-color: var(--color-primary);
+        color: #fff;
+    }
+
+    &__user-option:focus,
+    &__user-option:active {
+        background-color: var(--color-primary);
+        color: #fff;
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3) inset;
+    }
+
+    &__user:hover &__user-menu {
+        transform: scaleY(1);
+        box-shadow: var(--shadow-light);
+        display: block;
     }
 }
 
