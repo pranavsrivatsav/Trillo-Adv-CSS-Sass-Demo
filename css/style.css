@@ -351,6 +351,21 @@ body {
   .gallery__photo {
     width: 100%;
     display: block; }
+  .gallery__item {
+    position: relative;
+    overflow: hidden; }
+  .gallery__item:hover .gallery__caption {
+    bottom: 0; }
+  .gallery__caption {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    transition: all 0.3s ease; }
 
 .overview {
   display: flex;

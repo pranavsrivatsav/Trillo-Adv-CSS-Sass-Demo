@@ -287,6 +287,27 @@
         width: 100%;
         display: block;
     }
+
+    &__item {
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__item:hover &__caption {
+        bottom: 0;
+    }
+
+    &__caption {
+        width: 100%;
+        text-align: center;
+        font-size: 1.2rem;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        transition: all 0.3s ease;
+    }
 }
 
 //////////////////////////////////////////
