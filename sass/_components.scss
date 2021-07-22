@@ -14,7 +14,7 @@
     justify-content: center;
     position: relative;
 
-    @media only screen and (max-width: $bp-smallest) {
+    @media only screen and (max-width: $bp-smaller) {
         order: 1;
         flex: 0 0 100%;
         background-color: var(--color-grey-light-2);
@@ -36,7 +36,7 @@
         z-index: 1000;
         border: var(--line);
 
-        @media only screen and (max-width: $bp-smallest) {
+        @media only screen and (max-width: $bp-smaller) {
             left: 0;
         }
     }
@@ -281,7 +281,7 @@
     &__item:active::before {
         background-color: var(--color-primary-light);
 
-        @media only screen and (max-width: $bp-smallest) {
+        @media only screen and (max-width: $bp-smaller) {
             font-size: 1.2rem;
         }
     }
@@ -320,6 +320,10 @@
             height: 1.5rem;
             margin-right: 0;
             margin-bottom: 0.7rem;
+        }
+
+        @media only screen and (max-width: $bp-smaller) {
+            display: none;
         }
     }
 }
@@ -373,10 +377,17 @@
 //HOTEL OVERVIEW
 .overview {
     display: flex;
+    flex-wrap: wrap;
     border-bottom: var(--line);
     align-items: center;
     font-size: 1.1rem;
     background-color: #fff;
+
+    @media only screen and (max-width: $bp-smallest) {
+        & > * {
+            flex: 0 0 50%;
+        }
+    }
 
     &__heading {
         font-size: 2.25rem;
@@ -389,12 +400,21 @@
             font-size: 1.8rem;
             padding: 1.25rem 2rem;
         }
+
+        @media only screen and (max-width: $bp-smallest) {
+            padding: 0.2rem 1.2rem;
+        }
     }
 
     &__stars {
         margin-right: auto;
         display: flex;
         align-items: center;
+
+        @media only screen and (max-width: $bp-smallest) {
+            justify-content: flex-end;
+            padding-right: 1.1rem;
+        }
     }
 
     &__icon-star,
@@ -412,16 +432,32 @@
     &__location {
         display: flex;
         align-items: center;
+        margin-right: 3rem;
+
+        @media only screen and (max-width: $bp-smallest) {
+            margin-right: 0;
+            align-self: stretch;
+            padding-left: 0.75rem;
+            color: #fff;
+            background-color: var(--color-primary);
+
+            .btn-inline {
+                color: inherit;
+            }
+        }
     }
 
     &__icon-location {
         margin-right: 0.5rem;
+
+        @media only screen and (max-width: $bp-smallest) {
+            fill: #fff;
+        }
     }
 
     &__rating {
         background-color: var(--color-primary);
         align-self: stretch;
-        margin-left: 3rem;
         color: #fff;
         padding: 0 2.25rem;
         display: flex;
@@ -431,6 +467,12 @@
 
         @media only screen and (max-width: $bp-small) {
             padding: 0 1.5rem;
+        }
+
+        @media only screen and (max-width: $bp-smallest) {
+            margin-left: 0;
+            padding-right: 1.2rem;
+            align-items: flex-end;
         }
     }
 
@@ -636,11 +678,17 @@
     @media only screen and (max-width: $bp-medium) {
         padding: 2.5rem 0;
     }
+
     &__book {
         font-size: 2rem;
         font-weight: 300;
         text-transform: uppercase;
         margin-bottom: 2.5rem;
+
+        @media only screen and (max-width: $bp-smaller) {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
     }
 }
 

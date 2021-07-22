@@ -379,6 +379,9 @@ body {
         height: 1.5rem;
         margin-right: 0;
         margin-bottom: 0.7rem; } }
+    @media only screen and (max-width: 31.25em) {
+      .side-nav__icon {
+        display: none; } }
 
 .legal {
   color: var(--color-grey-light-4);
@@ -412,10 +415,14 @@ body {
 
 .overview {
   display: flex;
+  flex-wrap: wrap;
   border-bottom: var(--line);
   align-items: center;
   font-size: 1.1rem;
   background-color: #fff; }
+  @media only screen and (max-width: 26.25em) {
+    .overview > * {
+      flex: 0 0 50%; } }
   .overview__heading {
     font-size: 2.25rem;
     font-weight: 300;
@@ -426,10 +433,17 @@ body {
       .overview__heading {
         font-size: 1.8rem;
         padding: 1.25rem 2rem; } }
+    @media only screen and (max-width: 26.25em) {
+      .overview__heading {
+        padding: 0.2rem 1.2rem; } }
   .overview__stars {
     margin-right: auto;
     display: flex;
     align-items: center; }
+    @media only screen and (max-width: 26.25em) {
+      .overview__stars {
+        justify-content: flex-end;
+        padding-right: 1.1rem; } }
   .overview__icon-star, .overview__icon-location {
     width: 1.75rem;
     height: 1.75rem;
@@ -440,13 +454,25 @@ body {
         height: 1.5rem; } }
   .overview__location {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    margin-right: 3rem; }
+    @media only screen and (max-width: 26.25em) {
+      .overview__location {
+        margin-right: 0;
+        align-self: stretch;
+        padding-left: 0.75rem;
+        color: #fff;
+        background-color: var(--color-primary); }
+        .overview__location .btn-inline {
+          color: inherit; } }
   .overview__icon-location {
     margin-right: 0.5rem; }
+    @media only screen and (max-width: 26.25em) {
+      .overview__icon-location {
+        fill: #fff; } }
   .overview__rating {
     background-color: var(--color-primary);
     align-self: stretch;
-    margin-left: 3rem;
     color: #fff;
     padding: 0 2.25rem;
     display: flex;
@@ -456,6 +482,11 @@ body {
     @media only screen and (max-width: 37.5em) {
       .overview__rating {
         padding: 0 1.5rem; } }
+    @media only screen and (max-width: 26.25em) {
+      .overview__rating {
+        margin-left: 0;
+        padding-right: 1.2rem;
+        align-items: flex-end; } }
   .overview__rating-average {
     font-size: 2.25rem;
     margin-bottom: -3px; }
@@ -595,6 +626,10 @@ body {
     font-weight: 300;
     text-transform: uppercase;
     margin-bottom: 2.5rem; }
+    @media only screen and (max-width: 31.25em) {
+      .cta__book {
+        font-size: 1.8rem;
+        margin-bottom: 2rem; } }
 
 .btn {
   font-size: 1.5rem;
