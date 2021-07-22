@@ -12,11 +12,56 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 
     @media only screen and (max-width: $bp-smallest) {
         order: 1;
         flex: 0 0 100%;
         background-color: var(--color-grey-light-2);
+    }
+
+    &__suggestion-box {
+        position: absolute;
+        left: 0.5rem;
+        top: 100%;
+        width: 100%;
+        background-color: #fff;
+        color: var(--color-primary);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        transform: scaleY(0);
+        transition: transform 0.1s ease-out 0.2s;
+        transform-origin: top;
+        opacity: 0;
+        z-index: 1000;
+        border: var(--line);
+
+        @media only screen and (max-width: $bp-smallest) {
+            left: 0;
+        }
+    }
+
+    &__suggestion {
+        display: block;
+        padding: 0.7rem 2rem;
+        text-decoration: none;
+        color: inherit;
+
+        &:last-child {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        &:hover,
+        &:active {
+            background-color: var(--color-primary);
+            color: #fff;
+            font-weight: 600;
+        }
+
+        &:active {
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3) inset;
+        }
     }
 
     &__input {
@@ -35,6 +80,9 @@
             outline: none;
             width: 100%;
             background-color: var(--color-grey-light-3);
+            border-radius: 10px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
         }
 
         &::-webkit-input-placeholder {
@@ -45,6 +93,11 @@
 
     &__input:focus + &__button {
         background-color: var(--color-grey-light-3);
+    }
+
+    &__input:focus ~ &__suggestion-box {
+        opacity: 1;
+        transform: scaleY(1);
     }
 
     &__button {
@@ -124,12 +177,12 @@
         position: absolute;
         top: 100%;
         right: -0.1%;
-        font-size: 1.5rem;
         color: var(--color-primary);
         display: none;
         background-color: #fff;
         transform: scaleY(0);
         border: var(--line);
+        border-bottom-left-radius: 10px;
         text-align: center;
         transition: all 0.3s;
         transform-origin: top;
@@ -151,11 +204,16 @@
         &:not(:last-child) {
             border-bottom: var(--line);
         }
+
+        &:last-child {
+            border-bottom-left-radius: 10px;
+        }
     }
 
     &__user-option:hover {
         background-color: var(--color-primary);
         color: #fff;
+        font-weight: 600;
     }
 
     &__user-option:focus,
@@ -169,7 +227,7 @@
         transform: scaleY(1);
         box-shadow: var(--shadow-light);
         display: block;
-        z-index: 1;
+        z-index: 1000;
     }
 }
 
