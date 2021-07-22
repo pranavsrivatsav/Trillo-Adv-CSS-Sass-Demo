@@ -363,7 +363,7 @@
     &__caption {
         width: 100%;
         text-align: center;
-        font-size: 1.2rem;
+        font-size: 1.25rem;
         color: #fff;
         background-color: rgba(0, 0, 0, 0.4);
         position: absolute;
@@ -383,12 +383,6 @@
     font-size: 1.1rem;
     background-color: #fff;
 
-    @media only screen and (max-width: $bp-smallest) {
-        & > * {
-            flex: 0 0 50%;
-        }
-    }
-
     &__heading {
         font-size: 2.25rem;
         font-weight: 300;
@@ -403,6 +397,8 @@
 
         @media only screen and (max-width: $bp-smallest) {
             padding: 0.2rem 1.2rem;
+            flex: 0 0 70%;
+            order: 1;
         }
     }
 
@@ -412,8 +408,12 @@
         align-items: center;
 
         @media only screen and (max-width: $bp-smallest) {
-            justify-content: flex-end;
-            padding-right: 1.1rem;
+            justify-content: center;
+            flex: 1;
+            background-color: var(--color-primary);
+            align-self: stretch;
+            order: 4;
+            padding-bottom: 0.2rem;
         }
     }
 
@@ -429,30 +429,28 @@
         }
     }
 
+    &__icon-star {
+        @media only screen and (max-width: $bp-smallest) {
+            fill: #fff;
+        }
+    }
+
     &__location {
         display: flex;
         align-items: center;
         margin-right: 3rem;
 
         @media only screen and (max-width: $bp-smallest) {
+            flex: 0 0 70%;
             margin-right: 0;
             align-self: stretch;
-            padding-left: 0.75rem;
-            color: #fff;
-            background-color: var(--color-primary);
-
-            .btn-inline {
-                color: inherit;
-            }
+            padding: 0.4rem 0.75rem;
+            order: 3;
         }
     }
 
     &__icon-location {
         margin-right: 0.5rem;
-
-        @media only screen and (max-width: $bp-smallest) {
-            fill: #fff;
-        }
     }
 
     &__rating {
@@ -471,8 +469,10 @@
 
         @media only screen and (max-width: $bp-smallest) {
             margin-left: 0;
-            padding-right: 1.2rem;
-            align-items: flex-end;
+            padding: 0;
+            align-items: center;
+            flex: 1;
+            order: 2;
         }
     }
 
@@ -489,6 +489,10 @@
     &__rating-count {
         font-size: 0.8rem;
         text-transform: uppercase;
+
+        @media only screen and (max-width: $bp-smallest) {
+            display: none;
+        }
     }
 }
 
