@@ -269,7 +269,8 @@ body {
   .user-nav__user:hover .user-nav__user-menu {
     transform: scaleY(1);
     box-shadow: var(--shadow-light);
-    display: block; }
+    display: block;
+    z-index: 1; }
 
 .side-nav {
   font-size: 1.4rem;

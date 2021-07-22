@@ -169,6 +169,7 @@
         transform: scaleY(1);
         box-shadow: var(--shadow-light);
         display: block;
+        z-index: 1;
     }
 }
 
