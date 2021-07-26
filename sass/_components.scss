@@ -446,10 +446,8 @@
         overflow: hidden;
         animation: slider 15s infinite;
 
-        &:hover,
-        &:focus,
-        &:active {
-            animation: none;
+        &:hover {
+            animation-play-state: paused;
         }
     }
 

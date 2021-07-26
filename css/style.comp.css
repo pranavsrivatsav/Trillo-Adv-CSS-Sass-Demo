@@ -465,8 +465,8 @@ body {
       width: 400%;
       overflow: hidden;
       animation: slider 15s infinite; }
-      .gallery:hover, .gallery:focus, .gallery:active {
-        animation: none; } }
+      .gallery:hover {
+        animation-play-state: paused; } }
   .gallery__photo {
     width: 100%;
     display: block;
