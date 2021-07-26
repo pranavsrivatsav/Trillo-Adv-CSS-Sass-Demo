@@ -192,13 +192,32 @@
 
         &--chats {
             width: 36rem;
-            height: 24rem;
+            height: 21rem;
             overflow-x: hidden;
             overflow-y: scroll;
             text-align: left;
             border-bottom-right-radius: 10px;
             padding: 1rem;
             cursor: auto;
+
+            &::-webkit-scrollbar {
+                width: 16px;
+            }
+
+            &::-webkit-scrollbar-track {
+                margin: 0.7rem;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 9999px;
+                border: 5px solid rgba(0, 0, 0, 0);
+                background-color: var(--color-primary);
+                background-clip: padding-box;
+            }
+
+            @media only screen and (max-width: $bp-small) {
+                right: -100%;
+            }
         }
     }
 
@@ -214,8 +233,12 @@
             background-color: var(--color-grey-light-1);
             border: var(--line-thick);
             border-radius: 10px;
-            margin-bottom: 1rem;
+
             cursor: pointer;
+
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
 
             &:hover {
                 background-color: var(--color-primary);
@@ -225,26 +248,20 @@
 
         &-item:hover &-message {
             color: #fff;
+            font-weight: 600;
         }
 
         &-photo {
             width: 100%;
             border-radius: 50%;
-            grid-row: 1 / 3;
+            grid-row: 1 / -1;
             align-self: start;
             justify-self: center;
         }
 
-        &-meta {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
         &-name {
-            line-height: 1;
             margin-right: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 600;
         }
 
@@ -252,11 +269,12 @@
             line-height: 1;
             grid-row: 2 / 3;
             grid-column: 2 /3;
-            font-size: 1.1rem;
-            margin-top: -1.1rem;
+            font-size: 1rem;
+            // margin-top: -1.1rem;
         }
 
         &-message {
+            font-size: 1.3rem;
             grid-column: 2 / 3;
             color: var(--color-grey-dark-2);
         }
