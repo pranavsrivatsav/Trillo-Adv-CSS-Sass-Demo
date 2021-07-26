@@ -218,6 +218,10 @@
             @media only screen and (max-width: $bp-small) {
                 right: -100%;
             }
+
+            @media only screen and (max-width: $bp-smaller) {
+                right: -150%;
+            }
         }
     }
 
@@ -435,6 +439,19 @@
 //GALLERY
 .gallery {
     display: flex;
+    position: relative;
+
+    @media only screen and (max-width: $bp-small) {
+        width: 400%;
+        overflow: hidden;
+        animation: slider 15s infinite;
+
+        &:hover,
+        &:focus,
+        &:active {
+            animation: none;
+        }
+    }
 
     &__photo {
         width: 100%;
@@ -445,6 +462,14 @@
     &__item {
         position: relative;
         overflow: hidden;
+
+        &--hidden {
+            display: none;
+
+            @media only screen and (max-width: $bp-small) {
+                display: block;
+            }
+        }
     }
 
     &__item:hover &__caption {
@@ -460,11 +485,17 @@
         text-align: center;
         font-size: 1.2rem;
         color: #fff;
-        background-color: rgba(0, 0, 0, 0.4);
+        padding: 1rem;
+        background-color: rgba(0, 0, 0, 0.5);
         position: absolute;
         bottom: -100%;
         left: 0;
         transition: all 0.3s ease;
+
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.6rem;
+            padding: 2rem;
+        }
     }
 }
 
@@ -867,5 +898,26 @@
     100% {
         transform: scale(1);
         box-shadow: none;
+    }
+}
+
+@keyframes slider {
+    25% {
+        left: 0%;
+    }
+    33% {
+        left: -100%;
+    }
+    58% {
+        left: -100%;
+    }
+    66% {
+        left: -200%;
+    }
+    92% {
+        left: -200%;
+    }
+    100% {
+        left: -300%;
     }
 }
